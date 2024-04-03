@@ -9,6 +9,7 @@
         <title>Document</title>
     </head>
     <body>
+        <x-layout.navbar/>
         {{$slot}}
     </body>
     </html>
