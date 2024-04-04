@@ -12,7 +12,7 @@
         <x-layout.navbar/>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 mt-5">
+                <div class="col-12 col-md-8 mt-5">
         {{$slot}}
                 </div>
             </div>

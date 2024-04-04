@@ -1,29 +1,30 @@
 <x-layout.layout>
     
     <h1>Benvenuti su Presto.it</h1>
+    @auth
+    <a href="{{route('ads.create')}}" class="btn btn-outline-dark btn-lg background-primary color-detail" weight="45">Crea Annuncio</a>
+    @endauth
     @guest
     <button class="btn btn-outline-dark btn-lg background-primary color-detail" weight="45" href="{{route('home')}}">Accedi</button>
     @endguest
-    @auth
-    <button class="btn btn-outline-dark btn-lg background-primary color-detail" weight="45" href="{{route('home')}}">Crea il tuo Annuncio</button>
-    @endauth
+   
 
     <div class="d-flex justify-content-center">
-        <div id="carouselExample" class="carousel slide mt-5" style="max-width: 90%; margin: auto;">
+        <div id="carouselExample" class="carousel slide mt-5" style="max-width: 90%; margin: auto;" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-interval="2000">
               <img src="{{ asset('images/vino.webp') }}" class="d-block w-100" alt="I migliori vini">
               <div class="carousel-caption d-none d-md-block">
                 <h1 class="color-detail">I migliori vini</h1>
               </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="2000">
               <img src="{{ asset('images/rum.webp') }}" class="d-block w-100" alt="I migliori distillati">
               <div class="carousel-caption d-none d-md-block">
                 <h1 class="color-detail">I migliori distillati</h1>
               </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" data-bs-interval="2000">
               <img src="{{ asset('images/gin.webp') }}" class="d-block w-100" alt="La tua passione">
               <div class="carousel-caption d-none d-md-block">
                 <h1 class="color-detail">La tua passione</h1>
@@ -40,6 +41,7 @@
           </button>
         </div>
       </div>
+      
       
 
 </x-layout.layout>

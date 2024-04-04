@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[main::class,'home'])->name('home');
+
+Route::get('/adsindex',[main::class,'ads'])->name('ads.index');
+
+Route::get('/adscreate',[main::class,'create'])->name('ads.create');
+
+Route::get('/adsedit',[main::class,'edit'])->name('ads.edit');
