@@ -12,33 +12,25 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    #[Validate('required|min:10|max:100', 'custom_messages')]
+    #[Validate('required',message:'Il titolo è obbligatorio.')]
+    #[Validate('min:10',message:'Il titolo deve essere lungo almeno 10 caratteri.')]
+    #[Validate('max:100',message:'Il titolo deve essere lungo masssimo 100 caratteri')]
     public $title;
 
-    #[Validate('min:10|max:150', 'custom_messages')]
+    #[Validate('min:10',message:'la descrizione deve essere lungo almeno 10 caratteri.')]
+    #[Validate('max:200',message:'la descrizione deve essere lungo masssimo 200 caratteri')]
     public $description;
 
-    #[Validate('required', 'custom_messages')]
+    #[Validate('required',message:'Si prega di selezionare una categoria.')]
     public $category_id;
 
     public $user_id;
 
-    #[Validate('required', 'custom_messages')]
+    #[Validate('required',message:'Il prezzo è obbligatorio.')]
     public $price;
 
-    #[Validate('image', 'custom_messages')]
-    public $picture;
-
-    protected $customMessages = [
-        'title.required' => 'Il titolo è obbligatorio.',
-        'title.min' => 'Il titolo deve essere lungo almeno :min caratteri.',
-        'title.max' => 'Il titolo non può superare :max caratteri.',
-        'description.min' => 'La descrizione deve essere lunga almeno :min caratteri.',
-        'description.max' => 'La descrizione non può superare :max caratteri.',
-        'category_id.required' => 'Si prega di selezionare una categoria.',
-        'price.required' => 'Il prezzo è obbligatorio.',
-        'picture.image' => 'Il file caricato deve essere un\'immagine.',
-    ];
+    // #[Validate('image', 'custom_messages')]
+    // public $picture;
 
     public function render()
     {
@@ -56,10 +48,10 @@ class Create extends Component
             'price'=>$this->price,
         ]);
 
-        $asdPath ='public/ads/'. $ads->id;
+        // $asdPath ='public/ads/'. $ads->id;
 
-        $ads->picture=$this->picture->storeAs(path:  $asdPath, name: 'cover.jpg');
-        $ads->save();
+        // $ads->picture=$this->picture->storeAs(path:  $asdPath, name: 'cover.jpg');
+        // $ads->save();
 
         session()->flash('success','il tuo annuncio è stato creato con successo!');
     }

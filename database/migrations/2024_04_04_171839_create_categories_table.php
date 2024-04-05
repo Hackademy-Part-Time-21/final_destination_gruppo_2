@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Categories;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +18,11 @@ return new class extends Migration
             $table->text('desccription')->nullable();
             $table->timestamps();
         });
+
+        $categories= ['vino','birra','acqua'];
+        foreach($categories as $category){
+            Categories::create(['name'=>$category]);
+        }
     }
 
     /**

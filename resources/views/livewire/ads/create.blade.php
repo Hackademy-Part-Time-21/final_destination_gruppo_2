@@ -23,7 +23,7 @@
                         <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
-                @error('category')
+                @error('category_id')
                     <span class="text-danger fw-bold">{{$message}}</span>
                 @enderror
             </div>
@@ -34,13 +34,13 @@
                     <span class="text-danger fw-bold">{{$message}}</span>
                  @enderror
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label class="form-label color-primary">Selezione Immagine</label>
                 <input wire:model="picture" type="file" class="form-control @error('picture') is-invalid @enderror">
                 @error('picture')
                     <span class="text-danger fw-bold">{{$message}}</span>
                 @enderror
-            </div>
+            </div> --}}
         <button type="submit" class="btn background-primary color-accent">Aggiungi un nuovo annuncio</button>
     </form>
 </div>
