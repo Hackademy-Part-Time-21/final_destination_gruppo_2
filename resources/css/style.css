@@ -1,0 +1,83 @@
+:root{
+    --primary: #411530;
+    --secondary: rgb(209, 81, 45);
+    --accent: #F5C7A9;
+    --detail: #F5E8E4;
+}
+.background-primary{
+    background-color: var(--primary) !important;
+}
+.color-primary{
+    color: var(--primary) !important;
+}
+
+.background-secondary{
+    background-color: var(--secondary);
+}
+.color-secondary{
+    color: var(--secondary)
+}
+
+.background-accent{
+    background-color: var(--accent);
+}
+.color-accent{
+    color: var(--accent)
+}
+
+.background-detail{
+    background-color: var(--detail);
+}
+.color-detail{
+    color: var(--detail)
+}
+
+body{
+    background-color: var(--accent);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--secondary)
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    color: var(--secondary);
+    background-color: var(--accent);
+}
+
+.btn:hover {
+    color: var(--accent)
+}
+
+.dropdown-menu .dropdown-item:not(:hover) .fa-user {
+    color: var(--secondary);
+}
+
+#carouselExample {
+    width: 100%; /* Imposta la larghezza del carousel al 100% del contenitore */
+    height: 350px; /* Imposta l'altezza fissa del carousel a 300px */
+    overflow: hidden; /* Nasconde eventuali contenuti che fuoriescono dal carousel */
+}
+
+.carousel-inner {
+    width: 100%; /* Assicura che il carousel abbia larghezza del 100% */
+    height: 100%; /* Assicura che il carousel abbia altezza del 100% */
+}
+
+.carousel-item {
+    width: 100%; /* Assicura che gli elementi del carousel abbiano larghezza del 100% */
+    height: 100%; /* Assicura che gli elementi del carousel abbiano altezza del 100% */
+}
+
+.carousel-item img {
+    width: 100%; /* Assicura che le immagini all'interno del carousel abbiano larghezza del 100% */
+    height: 100%; /* Assicura che le immagini all'interno del carousel abbiano altezza del 100% */
+    object-fit: cover; /* Scala l'immagine per coprire l'intera area del carousel */
+}
+
+.margin-top-nav {
+    margin-top: 110px;
+}
+

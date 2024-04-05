@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Ads extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','description','picture','category_id','user_id','price'];
+    protected $fillable = ['title','description','picture','price','category_id','user_id'];
 
     public function user(){
         return $this->belongsTo(User::class,'user_id');
