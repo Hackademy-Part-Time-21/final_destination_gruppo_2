@@ -1,4 +1,5 @@
 <x-layout.layout>
+    <div class="mt-5">
     <form method="POST" action="/register">
         @csrf
         <div class="mb-3">
@@ -28,4 +29,5 @@
         </div>
         <button type="submit" class="btn background-primary color-accent">Registrati</button>
     </form>
+</div>
 </x-layout.layout>

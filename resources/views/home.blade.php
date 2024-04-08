@@ -1,6 +1,9 @@
 <x-layout.layout>
+    <div class="mt-5">
     @auth
+    <div class="mb-2">
     <a href="{{route('ads.create')}}" class="btn btn-outline-dark btn-lg background-primary color-detail" weight="45">Crea Annuncio</a>
+    </div>
     @endauth
     <div class="d-flex justify-content-center">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -34,4 +37,5 @@
             </button>
         </div>
     </div>
+</div>
 </x-layout.layout>

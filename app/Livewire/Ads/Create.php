@@ -47,6 +47,7 @@ class Create extends Component
             'user_id'=>Auth::user()->id,
             'price'=>$this->price,
         ]);
+        $this->reset();
 
         // $asdPath ='public/ads/'. $ads->id;
 
