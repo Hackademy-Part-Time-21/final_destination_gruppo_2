@@ -19,3 +19,4 @@ function adjustNavbarHeight() {
 window.onload = adjustNavbarHeight;
 
 window.onresize = adjustNavbarHeight;
+

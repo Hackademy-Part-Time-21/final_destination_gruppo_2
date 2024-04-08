@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 
 class main extends Controller
 {
-    public function home(){
-        return view('home'); 
-    }
+    public function home()
+{
+    
+    $ads = \App\Models\Ads::orderBy('created_at')->paginate(6);
+
+    return view('home', compact('ads'));
+}
 
     public function ads(){
         return view('ads.ads'); 
@@ -21,4 +25,6 @@ class main extends Controller
     public function edit(){
         return view('ads.edit'); 
     }
+
+    
 }

@@ -5,7 +5,7 @@
     <a href="{{route('ads.create')}}" class="btn btn-outline-dark btn-lg background-primary color-detail" weight="45">Crea Annuncio</a>
     </div>
     @endauth
-    <div class="d-flex justify-content-center">
+    {{-- <div class="d-flex justify-content-center">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2000">
@@ -36,6 +36,26 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+    </div>
+</div> --}}
+
+<div class="container">
+    <div class="row">
+        @foreach ($ads as $ads) 
+            <div class="col-md-3 mb-4"> 
+                <div class="card" style="width: 100%;"> 
+                    <img src="{{ $ads->picture ?: 'https://picsum.photos/150/150' }}" class="card-img-top" alt="Picture">
+
+                    <div class="card-body">
+                        
+                        <h5 class="card-title">{{ $ads->user_id }}</h5>
+                        <h6 class="card-title">{{ $ads->title }}</h6>
+                        <p class="card-text">{{ $ads->description }}</p>
+                        <a href="/annunci/{{ $ads->id }}" class="btn btn-primary">Dettagli</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>
 </x-layout.layout>
