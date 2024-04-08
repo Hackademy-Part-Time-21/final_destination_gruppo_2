@@ -43,8 +43,10 @@
                                 <a class="nav-link color-primary" data-bs-toggle="collapse" href="#submenuCategorie" role="button" aria-expanded="false" aria-controls="submenuCategorie">Categorie <i class="fa-solid fa-caret-down fa-2xs" style="color: #401430;"></i></a>
                                 <div class="collapse" id="submenuCategorie">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link color-primary" href="#">Subcategoria 1</a></li>
-                                        <li class="nav-item"><a class="nav-link color-primary" href="#">Subcategoria 2</a></li>
+                                        @foreach (App\Models\Categories::all() as $category)
+                                            
+                                        <li class="nav-item"><a class="nav-link color-primary" href="#">{{$category->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </li>
@@ -128,8 +130,10 @@
                             Categorie
                         </a>
                         <ul class="dropdown-menu " aria-labelledby="navCategorie">
-                            <li><a class="dropdown-item" href="#">Categoria 1</a></li>
-                            <li><a class="dropdown-item" href="#">Categoria 2</a></li>
+                            @foreach (App\Models\Categories::all() as $category)
+                                            
+                            <li class="nav-item"><a class="nav-link color-primary" href="{{route('adsByCategory',$category->id)}}">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
         

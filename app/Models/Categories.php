@@ -12,6 +12,6 @@ class Categories extends Model
     protected $fillable = ['name','description'];
 
     public function ads(){
-        return $this->hasMany(Ads::class);
+        return $this->hasMany(Ads::class, 'category_id');
     }
 }

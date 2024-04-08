@@ -1,5 +1,5 @@
 
-    <footer class="background-primary text-center">
+    <footer class="background-primary text-center sticky-bottom">
         <div class="color-accent">
             <h4>Presto S.R.L</h4>
             <p>+39 3348629606 - presto@presto.it </p>
