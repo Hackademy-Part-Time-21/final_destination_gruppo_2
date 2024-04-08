@@ -1,4 +1,5 @@
 <x-layout.layout>
+    <div class="mt-5">
     <form method="POST" action="/login">
         @csrf
         <div class="mb-3">
@@ -19,4 +20,5 @@
         <br>
         <button type="submit" class="btn background-primary color-accent mt-2">Accedi</button>
     </form>
+</div>
 </x-layout.layout>
