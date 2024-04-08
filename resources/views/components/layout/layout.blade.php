@@ -8,7 +8,7 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
             <title>Document</title>
         </head>
-        <body>
+        <body class="d-flex flex-column">
             <div class="fixed-top">
                 <x-layout.navbar/>
             </div>
