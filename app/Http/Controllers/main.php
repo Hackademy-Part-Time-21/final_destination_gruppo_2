@@ -10,22 +10,23 @@ class main extends Controller
 {
     public function home()
 {
-    
+
     $ads = \App\Models\Ads::orderBy('created_at')->paginate(6);
 
     return view('home', compact('ads'));
 }
 
     public function ads(){
-        return view('ads.ads'); 
+        $ads = \App\Models\Ads::orderBy('created_at')->paginate(6);
+        return view('ads.ads', compact('ads'));
     }
 
     public function create(){
-        return view('ads.create'); 
+        return view('ads.create');
     }
 
     public function edit(){
-        return view('ads.edit'); 
+        return view('ads.edit');
     }
 
     public function adsByCategory($id){
@@ -33,7 +34,7 @@ class main extends Controller
         $ads = $category->ads()->orderBy('created_at', 'desc')->paginate(6);
         return view('ads.ads', compact('category', 'ads'));
     }
-    
+
     public function adDetail($id){
         $ad=Ads::find($id);
         return view('ads.show',compact('ad'));
