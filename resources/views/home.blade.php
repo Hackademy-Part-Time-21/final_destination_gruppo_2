@@ -39,7 +39,7 @@
     </div>
 </div> --}}
 
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         @foreach ($ads as $ads) 
             <div class="col-md-3 mb-4"> 
@@ -57,5 +57,16 @@
             </div>
         @endforeach
     </div>
-</div>
+</div> --}}
+
+{{-- <div class="slider-container">
+    <h4 class="slider-title">Slider</h4>
+    <div class="left-arrow"><i class="fa fa-angle-left" style="font-size:24"></i></div>
+    <div class="slider-content" id="slider-content"></div>
+    <div class="slide">
+        <div class="media">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/604/743/desktop-wallpaper-best-cards-to-pull-from-pokemon-tcg-fusion-strike-vmax-gengar.jpg" alt="card1">
+        </div>
+    </div>
+</div> --}}
 </x-layout.layout>
