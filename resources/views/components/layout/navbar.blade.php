@@ -74,6 +74,7 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item"><a class="nav-link color-primary" href="#">Form di contatto</a></li>
                                         <li class="nav-item"><a class="nav-link color-primary" href="#">Altre informazioni</a></li>
+                                        <li><a class="dropdown-item" href="{{route('lavora-con-noi')}}">Lavora con noi</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -164,6 +165,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navContattaci">
                             <li><a class="dropdown-item" href="#">Form di contatto</a></li>
                             <li><a class="dropdown-item" href="#">Altre informazioni</a></li>
+                            <li><a class="dropdown-item" href="{{route('lavora-con-noi')}}">Lavora con noi</a></li>
                         </ul>
                     </li>
                     
