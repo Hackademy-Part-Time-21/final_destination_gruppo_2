@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // GUEST routes
     Route::middleware(['auth','verified'])->group(function () {
         Route::get('/ads/Create',[main::class,'create'])->name('ads.create');
-        Route::get('/ads/Edit',[main::class,'edit'])->name('ads.edit'); 
+        Route::get('/ads/Edit',[main::class,'edit'])->name('ads.edit');
     });
 
 // CHECKER routes
@@ -26,3 +26,4 @@ use Illuminate\Support\Facades\Route;
     Route::get('/undo',[main::class,'unDo'])->name('unDo');
 
 //ADMIN routes
+    Route::get('/makeChecker/{user}',[main::class,'makeChecker'])->name('makeChecker');
