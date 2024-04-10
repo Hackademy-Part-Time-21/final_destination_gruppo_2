@@ -19,5 +19,6 @@
         <div class="mt-3">
             {{ $ads->links('components.pagination')}}
         </div>
+        <a href="{{route('ads.create')}}" class="btn btn-primary">CREA ANNUNCIO</a>
     </div>
 </x-layout.layout>

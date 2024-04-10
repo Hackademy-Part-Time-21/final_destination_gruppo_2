@@ -13,6 +13,10 @@
                 <x-layout.navbar/>
             </div>
             <div class="container">
+
+                <div class="row justify-content-center">
+                   <div class="col-md-11 m-3">
+
                         {{$slot}}
             </div>
             <x-layout.footer/>
