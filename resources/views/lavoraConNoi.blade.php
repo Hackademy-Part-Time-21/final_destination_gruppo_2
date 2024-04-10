@@ -21,7 +21,7 @@
                     <br>
                     <br>
                     <div>
-                        <a href="{{route('beChecker')}}" class="btn btn-primary mb-3">RICHIEDI DI DIVENTARE REVISORE</a>
+                        <a href="{{route('beChecker',Auth::user())}}" class="btn btn-primary mb-3">RICHIEDI DI DIVENTARE REVISORE</a>
                     </div>
                 </header>
 <br>

@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ads;
+use App\Models\User;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Mail\CheckerRequeste;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class main extends Controller
 {
     public function __construct(){
+        $this->middleware('auth')->only('create','adsByCategory','adDetail','beChecker');
         $this->middleware('checker')->only('acceptAd','refuseAd','goToCheck');
     }
     public function home(){
@@ -61,11 +64,15 @@ class main extends Controller
         $ad->save();
         return redirect()->back()->with('success','stai andando bravi');
     }
-    public function beChecker(){
+    public function beChecker(User $user){
         $user=Auth::user();
-        $mail=new CheckerRequeste;
-        Mail::to($user->email)->send($mail);
+        $mail=new CheckerRequeste($user);
+        Mail::to('admin@presto.it')->send($mail);
         return redirect()->back()->with('success','stai andando ejriwagowheorue');
+    }
+    public function makeChecker(User $user){
+        Artisan::call('app:make-user-checker',['email'=>$user->email]);
+        return redirect('/');
     }
     public function lavoraConNoi(){
         return view('lavoraConNoi');
