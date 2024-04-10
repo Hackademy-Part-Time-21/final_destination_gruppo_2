@@ -1,11 +1,18 @@
 <x-layout.layout>
-    <div class="background-detail px-5 py-1 border border-dark border-4 rounded-4" style="--bs-border-opacity: .3;">
-    <div class="mt-5 text-center">
-        <h1 class="blueColorText">ECCO GLI ANNUNCI</h1>
+    <div class="sticky-top">
+        <a href="{{route('ads.create')}}" class="btn btn-primary mb-5">CREA ANNUNCIO</a>
+    </div>
+    <div class="mt-5">
+        <header class="text-center">
+            <h1>{{$category->name ?? ''}}</h1>
+            <h4>Ecco gli annunci</h4>
+        </header>
         <div class="container">
             <div class="row">
-                @foreach ($ads as $ad) 
-                    <x-ads-card :ad="$ad"/>
+                @foreach ($ads as $ad)
+                    <div>
+                        <x-ads-card :ad="$ad"/>
+                    </div>
                 @endforeach
             </div>
         </div>

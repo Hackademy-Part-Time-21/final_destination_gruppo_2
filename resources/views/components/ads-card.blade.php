@@ -1,4 +1,3 @@
-
             <div class="col-md-4 mb-4"> 
                 <div class="justify-content-between m-3">
                 <div class="card rounded-5 border border-info bg-gradient-secondary border-2" style="width: 100%;"> 
@@ -16,4 +15,4 @@
                 </div>
             </div>
          </div>
-    
+

@@ -14,6 +14,13 @@
                     <li class="col-3"><a href="https://www.twitter.com/presto_it"><i class="fab fa-twitter"></i></a></li>
                 </ul>
 
+
+    <footer class="background-primary text-center sticky-bottom">
+        <div class="color-accent">
+            <p>Presto S.R.L</p>
+            <span>+39 3348629606 - presto@presto.it </span>
+            <span>Viale Firenze Foligno (PG) 06034 </span>
+            <span><i class="fa-brands fa-cc-apple-pay"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-paypal"></i></span>
             </div>
             <div class="col-md-4 text-center">
                 <h5>Contatti</h5>
@@ -63,6 +70,7 @@
                 </ul>
             </div>
            
+
         </div>
     </div>
 </footer>
