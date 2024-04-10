@@ -131,3 +131,17 @@ body{
 .footer ul li a:hover {
     color: #666;
 }
+.foto{
+    height: 150px;
+}
+.footerpers{
+width: 1600px;
+margin-left: -130px;
+margin-right: -190px;
+}
+.socialColor:hover{
+    color: darkblue;
+}
+.footerColor:hover{
+font-weight: bold ;
+}
