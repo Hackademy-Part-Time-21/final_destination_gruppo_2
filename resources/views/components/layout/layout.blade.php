@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-        
+            <x-layout.footer/>
         </body>
     </html>
 </div>
