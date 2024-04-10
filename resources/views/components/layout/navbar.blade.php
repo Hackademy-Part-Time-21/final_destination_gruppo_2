@@ -25,15 +25,16 @@
         
         
         
-
-        <div class="col-12 d-flex justify-content-between background-accent color-primary m-" style="height: 68px;">
+        
+        {{-- <div class="col-12 d-flex justify-content-between background-accent color-primary m-" style="height: 68px;"> --}}
             
-            <div class="d-flex align-items-center mobile-menu-container" style="position: relative;"> 
-                <div class="d-block d-md-none me-3">
-                    <button class="btn color-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#menuMobile" aria-expanded="false" aria-controls="menuMobile">
+            {{-- <div class="d-flex align-items-center mobile-menu-container" style="position: relative;">  --}}
+                {{-- <div class="d-block d-md-none me-3">
+                </div> --}}
+                    {{-- <button class="btn color-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#menuMobile" aria-expanded="false" aria-controls="menuMobile">
                         <i class="fa-solid fa-bars fa-lg" style="color: #290f1e;"></i>
-                    </button>
-                    <div class="collapse" id="menuMobile">
+                    </button> --}}
+                    {{-- <div class="collapse" id="menuMobile">
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link color-primary"  href="{{route('ads.index')}}" role="button" aria-expanded="false" aria-controls="submenuCategorie">Annunci </a>
@@ -74,25 +75,37 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item"><a class="nav-link color-primary" href="#">Form di contatto</a></li>
                                         <li class="nav-item"><a class="nav-link color-primary" href="#">Altre informazioni</a></li>
+                                        <li><a class="dropdown-item" href="{{route('lavora-con-noi')}}">Lavora con noi</a></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
-                    </div>
-                </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+                            @guest
+                                <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                                <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                            @endguest
+                            @auth
+                                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Esci</a></li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            @endauth
+                        </ul>
+                    </div> --}}
                 
-                <i class="fa-solid fa-lg fa-magnifying-glass ms-3" style="color: #411530; margin: 1rem;"></i>
-            </div>
-        
+                {{-- <i class="fa-solid fa-lg fa-magnifying-glass ms-3" style="color: #411530; margin: 1rem;"></i> --}}
+            {{-- </div> --}}
+                   
             
-            <div style="height: 60px">
+            {{-- <div style="height: 60px">
                 <a href="{{route('home')}}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" style="height: 55px;">
                 </a>
-            </div>
+            </div> --}}
             
             
-            <div class="d-flex align-items-center me-4">
+            {{-- <div class="d-flex align-items-center me-4">
                 
                 <div class="dropdown">
                     <a class="fa-solid fa-user fa-lg" style="color: #411530; margin: 1rem; cursor: pointer;" id="dropdownUserMenu" data-bs-toggle="dropdown" aria-expanded="false">
@@ -112,9 +125,9 @@
                 </div>
             
                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #411530; margin: 1rem;"></i>
-            </div>
+            </div> --}}
             
-        </div>
+        {{-- </div> --}}
         
         
         <div id="navdesktop" class="py-3 d-none d-md-block" style="height: 58px;">
@@ -164,6 +177,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navContattaci">
                             <li><a class="dropdown-item" href="#">Form di contatto</a></li>
                             <li><a class="dropdown-item" href="#">Altre informazioni</a></li>
+                            <li><a class="dropdown-item" href="{{route('lavora-con-noi')}}">Lavora con noi</a></li>
                         </ul>
                     </li>
                     
