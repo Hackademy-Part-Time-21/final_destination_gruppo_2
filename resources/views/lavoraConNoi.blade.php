@@ -1,5 +1,6 @@
 <x-layout.layout>
     <div class="container">
+        <x-layout.success-message/>
         <div class="row">
             <div class="col-12 text-bg-dark">
                 <br>

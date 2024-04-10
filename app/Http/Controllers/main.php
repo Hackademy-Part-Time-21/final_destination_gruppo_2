@@ -65,6 +65,7 @@ class main extends Controller
         $user=Auth::user();
         $mail=new CheckerRequeste;
         Mail::to($user->email)->send($mail);
+        return redirect()->back()->with('success','stai andando ejriwagowheorue');
     }
     public function lavoraConNoi(){
         return view('lavoraConNoi');

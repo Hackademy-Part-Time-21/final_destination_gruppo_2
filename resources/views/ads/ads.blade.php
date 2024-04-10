@@ -4,7 +4,7 @@
     </div>
     <div class="mt-5">
         <header class="text-center">
-            <h1>{{$category->name}}</h1>
+            <h1>{{$category->name ?? ''}}</h1>
             <h4>Ecco gli annunci</h4>
         </header>
         <div class="container">
