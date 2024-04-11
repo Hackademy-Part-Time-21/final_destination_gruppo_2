@@ -33,7 +33,7 @@
 }
 
 body{
-    background-color: var(--accent);
+    background-color: rgb(1, 1, 57);
 }
 
 .btn:hover {
@@ -144,4 +144,10 @@ margin-right: -190px;
 }
 .footerColor:hover{
 font-weight: bold ;
+}
+.backgroundOpacity{
+    background-color: rgba(255, 255, 255, 0.070);
+}
+.InputOpacity{
+    background-color: rgba(255, 255, 255, 0.070);
 }

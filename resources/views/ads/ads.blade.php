@@ -1,5 +1,5 @@
 <x-layout.layout>
-    <div class="background-detail px-5 py-1 border border-black border-2 rounded-4" style="--bs-border-opacity: .5;">
+    <div class="backgroundOpacity px-5 py-1 border border-black border-2 rounded-4" style="--bs-border-opacity: .5;">
     <div class="mt-5 text-center">
         <h1 class="blueColorText pb-5">ECCO GLI ANNUNCI:</h1>
         <div class="container">
