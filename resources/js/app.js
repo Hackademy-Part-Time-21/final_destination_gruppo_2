@@ -1,22 +1,14 @@
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
-function adjustNavbarHeight() {
-    
-    var navbar = document.getElementById('navbarheight');
-
-    
-    if (window.innerWidth >= 768) {
-       
-        navbar.style.height = '30px';
-    } else {
-        
-        navbar.style.height = '';
-    }
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
-window.onload = adjustNavbarHeight;
-
-window.onresize = adjustNavbarHeight;
-
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
