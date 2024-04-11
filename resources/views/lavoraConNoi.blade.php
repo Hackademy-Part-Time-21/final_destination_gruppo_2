@@ -1,6 +1,5 @@
 <x-layout.layout>
     <div class="container">
-        <x-layout.success-message/>
         <div class="row">
             <div class="col-12 text-bg-dark">
                 <br>
@@ -30,7 +29,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nome e Cognome</label>
-                        <input name="name" type="text" class="form-control">  
+                        <input name="name" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Indirizzo email</label>

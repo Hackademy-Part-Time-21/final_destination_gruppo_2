@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
     });
 
 // CHECKER routes
-    Route::get('/ad-revision',[main::class,'goToCheck'])->name('adRevision');
+    Route::get('/ad-revision',[main::class,'goToCheck'])->name('adRevision')->middleware('checker');
     Route::get('/accept/{id}',[main::class,'acceptAd'])->name('acceptAd');
     Route::get('/refuse/{id}',[main::class,'refuseAd'])->name('refuseAd');
     Route::get('/undo',[main::class,'unDo'])->name('unDo');
