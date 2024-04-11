@@ -9,11 +9,17 @@
         </header>
         <div class="container">
             <div class="row">
-                @foreach ($ads as $ad)
+                @forelse ($ads as $ad)
                     <div>
                         <x-ads-card :ad="$ad"/>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12">
+                        <div class="text-danger fw-bold">
+                                <p class="lead">Non ci sono annunci per questa categoria</p>
+                        </div>
+                    </div>
+                @endforelse
             </div>
         </div>
         <div class="mt-3">

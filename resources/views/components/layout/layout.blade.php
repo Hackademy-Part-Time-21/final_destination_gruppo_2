@@ -12,14 +12,15 @@
             <div class="fixed-top">
                 <x-layout.navbar/>
             </div>
+            <x-layout.success-message/>
             <div class="container">
-
                 <div class="row justify-content-center">
                    <div class="col-md-11 m-3">
-
                         {{$slot}}
+                    </div>
+                </div>
             </div>
-            <x-layout.footer/>
+            {{-- <x-layout.footer/> --}}
         </body>
     </html>
 </div>
