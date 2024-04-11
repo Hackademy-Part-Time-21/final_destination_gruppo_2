@@ -1,3 +1,5 @@
+
+css
 :root{
     --primary: rgb(64, 20, 48);
     --secondary: #d1512d;
@@ -146,8 +148,5 @@ margin-right: -190px;
 font-weight: bold ;
 }
 .backgroundOpacity{
-    background-color: rgba(255, 255, 255, 0.070);
-}
-.InputOpacity{
     background-color: rgba(255, 255, 255, 0.070);
 }

@@ -13,7 +13,6 @@
                     <li class="col-3 fs-2 fw-bolder"><a href="https://www.facebook.com/presto.it"><i class="fab fa-facebook"></i></a></li>
                     <li class="col-3 fs-2 fw-bolder"><a href="https://www.twitter.com/presto_it"><i class="fab fa-twitter"></i></a></li>
                 </ul>
-
             </div>
             <div class="col-md-3 text-center text-white">
                 <h5 class="fw-bold">Questi siamo noi</h5>
@@ -30,6 +29,7 @@
             <br>
             <br>
             <div class="col-md-3 text-center text-white footerColor">
+
                 <h5>Get to Know Us</h5>
                 <ul>
                     <li>About Us</li>
@@ -61,8 +61,6 @@
                     <li>Shipping Rates & Policies</li>
                 </ul>
             </div>
-           
         </div>
     </div>
 </footer>
-
