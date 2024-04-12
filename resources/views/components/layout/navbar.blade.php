@@ -31,13 +31,14 @@
                 <img width="150" src="{{asset('images/logo.png')}}" alt="img">
             </a>
         </div>
-        <div>
-            <div style="flex-grow: 1; display: flex; justify-content: center;">
-                <form action="{{route('ads.index')}}" method="GET" style="display: flex; justify-content: center; width: 70%;">
-                    <input name="searched" class="form-control me-2 col" type="search" placeholder="Search" aria-label="Search" style="width: auto; flex-grow: 1; height: 30px; padding: 0 10px;">
-                    <button class="col" type="submit" style="border: none; background: none;">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
+        <div style="flex-grow: 1; display: flex; justify-content: center; ">
+            <div >
+                <form action="{{route('ads.index')}}" method="GET" style="display: flex; justify-content: center; width: 100%;">
+                    <input type="search" class="form-control" style="display: none;" placeholder="Search here...">
+                    <button type="button" id="toggleSearch" style=" border: none; background: none; ">
+                        <i type="submit" class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
                     </button>
+                    
                 </form>
             </div>
         </div>
@@ -95,5 +96,37 @@
       document.getElementById("main").style.marginLeft = "0";
       document.body.style.backgroundColor = accentColor; 
     }
+
+    
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.form-control');
+    const toggleButton = document.getElementById('toggleSearch');
+
+    // Funzione per mostrare/nascondere l'input di ricerca
+    toggleButton.addEventListener('click', function(event) {
+        if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+            searchInput.style.display = 'block'; // Mostra l'input
+            searchInput.focus(); // Mette il focus sull'input
+            event.stopPropagation(); // Previene la propagazione dell'evento
+        } else {
+            searchInput.style.display = 'none'; // Nasconde l'input
+        }
+    });
+
+    // Funzione per chiudere l'input cliccando altrove
+    document.addEventListener('click', function(event) {
+        if (!searchInput.contains(event.target) && !toggleButton.contains(event.target)) {
+            searchInput.style.display = 'none'; // Nasconde l'input se il click è fuori dall'input o dal bottone
+        }
+    });
+
+    // Previene che il click all'interno dell'input chiuda quest'ultimo
+    searchInput.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});
 </script>
     
