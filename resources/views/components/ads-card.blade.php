@@ -1,4 +1,4 @@
-            <div class="col-md-3 mb-4"> 
+            <div class="col-md-4 mb-3"> 
                 <div class="justify-content-between m-3 ">
                 <div class="card rounded-4 border border-dark-subtle bg-gradient-secondary border-4 border-opacity-50"> 
                     <img src="{{ $ad->picture ?: 'https://picsum.photos/60/60' }}" class="border-black border-1 foto rounded-top  border border-end-0 border-start-0 border-top-0" alt="Picture">

@@ -8,11 +8,10 @@
 
 
 
-      <header>
+    <header>
 
         <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
         <div class="overlay"></div>
-      
         <!-- The HTML5 video element that will create the background video on the header -->
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
           <source src="{{asset('video/AdobeStock_358217088_Video_HD_Preview.mov') }}" type="video/mp4">
@@ -30,10 +29,10 @@
       </header>
       
       <!-- Page section example for content below the video header -->
-      <section class="my-5">
+      {{-- <section class="my-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-12 mx-auto">
               <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are built into Bootstrap.</p>
               <p>The overlay color and opacity can be changed by modifying the <code>background-color</code> and <code>opacity</code> properties of the <code>.overlay</code> class in the CSS.</p>
               <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
@@ -43,10 +42,14 @@
             </div>
           </div>
         </div>
-      </section>
-
+      </section> --}}
+      <div class="mt-3">
+        <h1 class="text-center">
+          Ultimi arrivi
+        </h1>
+      </div>
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 @foreach ($ads as $ad)
                   <x-ads-card :ad="$ad"/>
                 @endforeach

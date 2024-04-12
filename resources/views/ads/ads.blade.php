@@ -8,7 +8,7 @@
             <h4>Ecco gli annunci</h4>
         </h1>
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 @forelse ($ads as $ad)
                     <div>
                         <x-ads-card :ad="$ad"/>

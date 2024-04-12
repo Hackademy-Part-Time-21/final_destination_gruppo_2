@@ -20,7 +20,7 @@ class main extends Controller
     }
     public function home(){
         $checked = Ads::where('checked',true);
-        $ads=$checked->orderBy('created_at')->paginate(6);
+        $ads=$checked->orderBy('updated_at', 'DESC')->take(6)->get();
         return view('home', compact('ads'));
     }
     public function ads(Request $request){
