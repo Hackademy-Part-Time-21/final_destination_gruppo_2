@@ -15,7 +15,7 @@ use App\Http\Controllers\Apply;
 class main extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->only('create','adsByCategory','adDetail','beChecker');
+        $this->middleware('auth')->only('create','adsByCategory','beChecker');
         $this->middleware('checker')->only('acceptAd','refuseAd','goToCheck');
     }
     public function home(){
@@ -66,9 +66,13 @@ class main extends Controller
     }
     public function beChecker(User $user){
         $user=Auth::user();
-        $mail=new CheckerRequeste($user);
-        Mail::to('admin@presto.it')->send($mail);
-        return redirect()->back()->with('success','richiesta revisore inoltrata con successo');
+            if($user){
+            $mail=new CheckerRequeste($user);
+            Mail::to('admin@presto.it')->send($mail);
+            return redirect()->back()->with('success','richiesta revisore inoltrata con successo');
+            }else{
+                return redirect()->back()->with('error','Effettua il login per mandare la richiesta');
+            }
     }
     public function makeChecker(User $user){
         Artisan::call('app:make-user-checker',['email'=>$user->email]);
@@ -78,7 +82,7 @@ class main extends Controller
         return view('lavoraConNoi');
     }
     public function candidati(Request $request){
-        dd();
+        return dd('questa pagina è in costruzione');
         Apply::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),

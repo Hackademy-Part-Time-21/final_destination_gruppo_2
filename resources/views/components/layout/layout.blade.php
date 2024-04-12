@@ -29,7 +29,7 @@
 
                 </div>
             </div>
-            {{-- <x-layout.footer/> --}}
+            <x-layout.footer/>
 
             <script src="resource.app.js"></script>
         </body>

@@ -31,15 +31,17 @@
                 <img width="150" src="{{asset('images/logo.png')}}" alt="img">
             </a>
         </div>
-        <div style="flex-grow: 1; display: flex; justify-content: center;">
-            <form action="{{route('ads.index')}}" method="GET" style="display: flex; justify-content: center; width: 70%;">
-                <input name="searched" class="form-control me-2 col" type="search" placeholder="Search" aria-label="Search" style="width: auto; flex-grow: 1; height: 30px; padding: 0 10px;">
-                <button class="col" type="submit" style="border: none; background: none;">
-                    <i class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
-                </button>
-            </form>
+        <div>
+            <div style="flex-grow: 1; display: flex; justify-content: center;">
+                <form action="{{route('ads.index')}}" method="GET" style="display: flex; justify-content: center; width: 70%;">
+                    <input name="searched" class="form-control me-2 col" type="search" placeholder="Search" aria-label="Search" style="width: auto; flex-grow: 1; height: 30px; padding: 0 10px;">
+                    <button class="col" type="submit" style="border: none; background: none;">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-        <div style="margin: 25px;">
+        <div style="margin: 25px; border: solid 5px">
             <a class="nav-link color-secondary" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-user"></i>
             </a>
@@ -60,6 +62,16 @@
                         </form>
                     </li>
                 @endauth
+                @if(Auth::user() && Auth::user()->role===2)
+                    <li>
+                        <a class="dropdown-item" href="{{route('adRevision')}}">Revisiona</a>
+                    </li>
+                @endif
+                @if(Auth::user() && Auth::user()->role===3)
+                    <li>
+                        <a class="dropdown-item" href="#">Rendi revisore</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

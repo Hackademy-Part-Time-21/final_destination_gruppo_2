@@ -31,7 +31,7 @@
             {{$ad->price}}
         </h4>
         <div>
-            {{$ad->picture ?? "no picture"}}
+            {{$ad->picture ?? ''}}
         </div>
     </div>
 </x-layout.layout>

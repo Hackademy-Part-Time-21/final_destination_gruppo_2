@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class AuthChecker
+class AuthAdmin
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class AuthChecker
     public function handle(Request $request, Closure $next): Response
     {
         $user=Auth::user();
-        if($user && $user->role===2){
+        if($user && $user->role===3){
         return $next($request);
         }else{
             abort(401);

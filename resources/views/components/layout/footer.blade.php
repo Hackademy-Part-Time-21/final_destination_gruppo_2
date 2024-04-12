@@ -1,4 +1,4 @@
-<footer class="footer bg-dark footerpers">
+<footer class="footer bg-dark">
     <div class="container vw-100">
         <div class="row text-center">
             <div class="col-md-6 text-center">

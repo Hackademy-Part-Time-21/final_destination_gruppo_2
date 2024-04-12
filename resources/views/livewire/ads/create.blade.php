@@ -27,11 +27,11 @@
             </div>
      
                 <div class="mb-3 blueColorText">
-                    <label  class="form-label fw-semibold ">Categoria</label>
+                    <label  class="form-label fw-semibold ">Seleziona una categoria</label>
                     <div class=" border border-info bg-gradient-secondary border rounded">
                     <select wire:model.change='category_id' class="form-select @error('category_id') is-invalid @enderror">
                     </div>
-                        <option >Seleziona una categoria</option>
+                        <option value=""></option>
                         @foreach (App\Models\Categories::all() as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach

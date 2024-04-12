@@ -20,10 +20,14 @@ use Illuminate\Support\Facades\Route;
     });
 
 // CHECKER routes
-    Route::get('/ad-revision',[main::class,'goToCheck'])->name('adRevision')->middleware('checker');
-    Route::get('/accept/{id}',[main::class,'acceptAd'])->name('acceptAd');
-    Route::get('/refuse/{id}',[main::class,'refuseAd'])->name('refuseAd');
-    Route::get('/undo',[main::class,'unDo'])->name('unDo');
+    Route::middleware(['checker'])->group(function () {
+        Route::get('/ad-revision',[main::class,'goToCheck'])->name('adRevision')->middleware('checker');
+        Route::get('/accept/{id}',[main::class,'acceptAd'])->name('acceptAd');
+        Route::get('/refuse/{id}',[main::class,'refuseAd'])->name('refuseAd');
+        Route::get('/undo',[main::class,'unDo'])->name('unDo');
+    });
 
 //ADMIN routes
-    Route::get('/makeChecker/{user}',[main::class,'makeChecker'])->name('makeChecker');
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/makeChecker/{user}',[main::class,'makeChecker'])->name('makeChecker');
+    });
