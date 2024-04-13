@@ -92,7 +92,7 @@
 }
 
 .margin-top-nav {
-    margin-top: 130px;
+    margin-top: 91px;
 } 
 
 .dropdown-menu {
@@ -245,3 +245,10 @@ header {
         display: none; /* Nasconde l'input di ricerca */
     }
 }
+
+.hoverElement:hover {
+    color: #e3fef7;  
+  }
+
+
+

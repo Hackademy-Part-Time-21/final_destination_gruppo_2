@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
+document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'  // Questo aggiunge un effetto di scorrimento animato
+    });
+});
 
 
 

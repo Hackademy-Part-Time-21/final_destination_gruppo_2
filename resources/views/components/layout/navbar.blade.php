@@ -3,7 +3,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle color-secondary" href="#" id="navCategorie" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="hoverElement dropdown-toggle color-secondary" href="#" id="navCategorie" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Contattaci
             </a>
             <ul class="dropdown-menu " aria-labelledby="navCategorie">
@@ -26,7 +26,7 @@
   
     <div  class="background-primary color-accent"  id="main" style="height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px;">
         <div style="display: flex; align-items: center;">
-            <span style="font-size: 30px; cursor: pointer; margin-right: 20px;" onclick="openNav()">&#9776;</span>
+            <span class="hoverElement color-detail" style="font-size: 30px; cursor: pointer; margin-right: 20px;" onclick="openNav()">&#9776;</span>
             <a href="{{route('home')}}">
                 <img width="150" src="{{asset('images/logo.png')}}" alt="img">
             </a>
@@ -87,13 +87,12 @@
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = detailColor; 
+      
     }
     
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("main").style.marginLeft = "0";
-      document.body.style.backgroundColor = accentColor; 
     }
 
     
