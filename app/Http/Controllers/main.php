@@ -10,28 +10,28 @@ use App\Mail\CheckerRequeste;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Apply;
 
 class main extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->only('create','adsByCategory','adDetail','beChecker');
+        $this->middleware('auth')->only('create','adsByCategory','beChecker');
         $this->middleware('checker')->only('acceptAd','refuseAd','goToCheck');
     }
     public function home(){
-        $checked = \App\Models\Ads::where('checked',true);
-        $ads=$checked->orderBy('created_at')->paginate(6);
+        $checked = Ads::where('checked',true);
+        $ads=$checked->orderBy('updated_at', 'DESC')->take(6)->get();
         return view('home', compact('ads'));
     }
-    public function ads(){
-        $checked = \App\Models\Ads::where('checked',true);
-        $ads=$checked->orderBy('created_at')->paginate(6);
+    public function ads(Request $request){
+        $ads = Ads::search($request->searched)->where('checked',true)->paginate(6);
         return view('ads.ads', compact('ads'));
     }
     public function create(){
-        return view('ads.create'); 
+        return view('ads.create');
     }
     public function edit(){
-        return view('ads.edit'); 
+        return view('ads.edit');
     }
     public function adsByCategory($id){
         $category = Categories::findOrFail($id);
@@ -66,9 +66,13 @@ class main extends Controller
     }
     public function beChecker(User $user){
         $user=Auth::user();
-        $mail=new CheckerRequeste($user);
-        Mail::to('admin@presto.it')->send($mail);
-        return redirect()->back()->with('success','stai andando ejriwagowheorue');
+            if($user){
+            $mail=new CheckerRequeste($user);
+            Mail::to('admin@presto.it')->send($mail);
+            return redirect()->back()->with('success','richiesta revisore inoltrata con successo');
+            }else{
+                return redirect()->back()->with('error','Effettua il login per mandare la richiesta');
+            }
     }
     public function makeChecker(User $user){
         Artisan::call('app:make-user-checker',['email'=>$user->email]);
@@ -77,14 +81,8 @@ class main extends Controller
     public function lavoraConNoi(){
         return view('lavoraConNoi');
     }
-    public function candidati(Request $candidatura){
-        dd($candidatura);
-        // creare migration create_applies_table
-        // Model Apply
-        // protected $fillable=['name','email','cv','presentazione'];
-
-        // creare vista con middleware Admin per mostrare lista richieste
-        // creare rotta Admin per vista
+    public function candidati(Request $request){
+        return dd('questa pagina è in costruzione');
         Apply::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),

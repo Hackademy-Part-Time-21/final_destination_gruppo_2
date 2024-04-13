@@ -1,5 +1,4 @@
 <x-layout.layout>
-    <x-layout.success-message/>
     <a href="{{route('unDo')}}" class="btn btn-warning">undo</a>
     <table class="table">
         <thead>

@@ -1,10 +1,10 @@
 
 css
 :root{
-    --primary: rgb(64, 20, 48);
-    --secondary: #d1512d;
-    --accent: rgb(245, 199, 169);
-    --detail: rgb(245, 232, 228);
+    --primary: #003c43;
+    --secondary: #135d66;
+    --detail: #77b0aa;
+    --accent: #e3fef7;
 }
 .background-primary{
     background-color: var(--primary) !important;
@@ -34,9 +34,39 @@ css
     color: var(--detail)
 }
 
-body{
-    background-color: rgb(1, 1, 57);
-}
+.hind-siliguri-light {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .hind-siliguri-regular {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .hind-siliguri-medium {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .hind-siliguri-semibold {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .hind-siliguri-bold {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
+
+
 
 .btn:hover {
     color: var(--accent)
@@ -65,7 +95,7 @@ body{
 }
 
 .margin-top-nav {
-    margin-top: 130px;
+    margin-top: 91px;
 } 
 
 .dropdown-menu {
@@ -147,6 +177,118 @@ margin-right: -190px;
 .footerColor:hover{
 font-weight: bold ;
 }
-.backgroundOpacity{
-    background-color: rgba(255, 255, 255, 0.070);
+
+.adsa{
+    background-color:rgba(255, 255, 255 , 255)
 }
+
+
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+
+  
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+  
+    header video {
+      display: none;
+    }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    #cardgeneric {
+        width: 188px; 
+        height: 451px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .form-control {
+        display: none; /* Nasconde l'input di ricerca */
+    }
+}
+
+.hoverElement:hover {
+    color: #e3fef7;  
+  }
+
+
+  .recensione-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.recensione-container img {
+    width: 100%;
+    max-width: 300px; 
+    height: auto; 
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease; 
+}
+
+.recensione-container img:hover {
+    transform: scale(1.2); 
+}
+
+
+@media (max-width: 768px) {
+    .recensione-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recensione-container img {
+        max-width: 200px; 
+        margin-bottom: 20px; 
+    }
+
+    .recensione-container img:hover {
+        transform: scale(1.05); 
+    }
+}
+

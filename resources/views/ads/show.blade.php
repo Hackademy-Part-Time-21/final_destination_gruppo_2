@@ -1,25 +1,37 @@
-<x-layout.layout/>
-    <br>
-    <br>
-    <br>
-    <div class="text-center ">
-        <h2>NOME:</h2> <br>
-
-     <h1 class="fs-1"> {{$ad->title}}  <br><br>
- </h1> <br>
-
-        <h2>DESCRIZIONE:</h2> <br>
-        <h4 class="fs-2">
-            {{$ad->description}} <br><br>
-        </h4> <br>
-        <h2>PREZZO:</h2> <br>
-        <h4 class="fs-3">
+<x-layout.layout>
+    <div>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ $ads[0]->picture ?? 'https://picsum.photos/150/150' }}" class="d-block w-100" alt="Immagine 1">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ $ads[1]->picture ?? 'https://picsum.photos/150/150' }}" class="d-block w-100" alt="Immagine 2">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ $ads[2]->picture ?? 'https://picsum.photos/150/150' }}" class="d-block w-100" alt="Immagine 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <h1>
+            {{$ad->title}}
+        </h1>
+        <h4>
+            {{$ad->description}}
+        </h4>
+        <h4>
             {{$ad->price}}
-        </h4> <br>
-        <div class="fs-4">
-            {{$ad->picture ?? "no picture"}}
+        </h4>
+        <div>
+            {{$ad->picture ?? ''}}
         </div>
     </div>
-    <br>
-    <br>
-    <br>
+</x-layout.layout>

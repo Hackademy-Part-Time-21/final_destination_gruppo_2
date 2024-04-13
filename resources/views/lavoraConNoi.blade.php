@@ -1,36 +1,30 @@
 <x-layout.layout>
     <div class="container">
-        <x-layout.success-message/>
         <div class="row">
             <div class="col-12 text-bg-dark">
                 <br>
                 <br>
-                <header class="card text-center pt-3">
+                <div class="card text-center pt-3">
                     <h1>
                         Non lavorare con noi!
                     </h1>
                     <br>
-                    <h4>
-                        Ma se proprio ti vuoi male, compila il form e forse un giorno sarai contattato.
-                    </h4>
-                    <br>
-                    <h6>
+                    <p>
                         Comunque la mail è finta quindi non arriverà mai neanche la richiesta
-                    </h6>
-                    <br>
+                    </p>
                     <br>
                     <br>
                     <div>
                         <a href="{{route('beChecker',Auth::user())}}" class="btn btn-primary mb-3">RICHIEDI DI DIVENTARE REVISORE</a>
                     </div>
-                </header>
+                </div>
 <br>
 <br>
                 <form action="{{route('candidati')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nome e Cognome</label>
-                        <input name="name" type="text" class="form-control">  
+                        <input name="name" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Indirizzo email</label>
@@ -42,7 +36,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Presentati brevemente</label>
-                        <textarea name="presentazione" cols="30" rows="10"></textarea>
+                        <input name="presentazione" class="form-control" type="text">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

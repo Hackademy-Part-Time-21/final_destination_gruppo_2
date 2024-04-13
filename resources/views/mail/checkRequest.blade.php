@@ -8,7 +8,7 @@
         </head>
         <body>
             <h2>CIao sig. Admin</h2>
-            <p>Clicca per rendere revisore {{$user}}</p>
+            <p>Clicca per rendere revisore {{$user->name}}</p>
             <p><a href="{{route('makeChecker',$user)}}" class="btn btn-success">ORA</a></p>
 
             <small>Se non hai fatto nessuna richiesta ignora pure questa mail!</small>

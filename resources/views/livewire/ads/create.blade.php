@@ -26,12 +26,12 @@
                 @enderror
             </div>
      
-                <div class="mb-3">
-                    <label  class="form-label fw-semibold text-white ">Categoria</label>
-                    <div class=" border border-info bg-gradient-secondary border rounded ">
-                    <select wire:model.change='category_id' class="form-select InputOpacity text-white  @error('category_id') is-invalid @enderror">
+                <div class="mb-3 blueColorText">
+                    <label  class="form-label fw-semibold ">Categoria</label>
+                    <div class=" border border-info bg-gradient-secondary border rounded">
+                    <select wire:model.change='category_id' class="form-select @error('category_id') is-invalid @enderror">
                     </div>
-                        <option class="text-dark backgroundOpacity">Seleziona una categoria</option>
+                        <option >Seleziona una categoria</option>
                         @foreach (App\Models\Categories::all() as $category)
                             <option class="text-dark backgroundOpacity" value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
