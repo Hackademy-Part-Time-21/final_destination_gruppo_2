@@ -1,8 +1,8 @@
-<footer class="footer bg-dark">
+<footer class="footer background-primary">
     <div class="container vw-100">
         <div class="row text-center">
             <div class="col-md-6 text-center">
-                <h5 class="text-white fw-bolder">Seguici su</h5>
+                <h5 class=" fw-bolder color-detail">Seguici su</h5>
                 <ul class="wrapper  text-center">
                     <li class="icon facebook">
                     <span><i class="fab fa-facebook-f"></i></span>
@@ -19,12 +19,12 @@
                 </ul>
             </div>
             <div class="col-md-6 text-center fw-semibold"> 
-                <h5 class="text-white fw-bold">Contatti</h5>
+                <h5 class="color-detail fw-bold">Contatti</h5>
                     <div class="row">
-                        <p class="col text-white fw-bold">email: info@presto.it</p>
-                        <p class="col text-white fw-bold">phone: +39 123456789</p>
+                        <p class="col color-detail fw-bold">email: info@presto.it</p>
+                        <p class="col color-detail fw-bold">phone: +39 123456789</p>
                     </div>
-                    <p class="text-white fw-bold">address: Via delle case rosse, 48/A - 10010 (TO)</p>
+                    <p class=" color-detail fw-bold">address: Via delle case rosse, 48/A - 10010 (TO)</p>
             </div>
         </div>
     </div>

@@ -18,17 +18,10 @@
                 <x-layout.navbar/>
             
             <x-layout.success-message/>
-            <div class="container">
-                <div class="row justify-content-center">
-                   <div class="col-md-11 m-3">
+            
                         {{$slot}}
 
-                   </div>
-
-                    </div>
-
-                </div>
-            </div>
+                   
             <x-layout.footer/>
 
             <script src="resource.app.js"></script>
