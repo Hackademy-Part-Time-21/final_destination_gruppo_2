@@ -22,10 +22,10 @@
        @endauth 
       
      
-      <div style="justify-content: center; border-top: 2px solid #003c43;">
-        <h1 class="text-center">
-          <strong>Ultimi arrivi</strong>
-        </h1>
+      <div style="justify-content: center; border-top: 2px solid #003c43; margin-top:2% ">
+        <h3  class="text-center color-primary">
+          Ultimi arrivi
+        </h3>
       </div>
         <div class="container">
             <div class="row text-center">
@@ -35,12 +35,17 @@
             </div>
         </div>
 
-        <div style="justify-content: center; border-top: 2px solid #003c43;">
-          <h1 class="text-center">
-            <strong>Dicono di noi</strong>
-          </h1>
+        <div style="justify-content: center; border-top: 2px solid #003c43; margin-top:2% ">
+          <h3 class="text-center color-primary">
+           Dicono di noi
+          </h3>
         </div>
 
+        <div class="recensione-container">
+          <img src="{{asset('images/Recensione1.png')}}" alt="Recensione">
+          <img src="{{asset('images/Recensione2.png')}}" alt="Recensione">
+          <img src="{{asset('images/Recensione3.png')}}" alt="Recensione">
+      </div>
 
 
 </x-layout.layout>
