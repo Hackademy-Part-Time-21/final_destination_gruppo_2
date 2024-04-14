@@ -5,6 +5,7 @@
     <div class="background-detail px-5 py-1 border border-dark border-4 rounded-4" style="--bs-border-opacity: .3;">
     <div class="mt-5">
         <form wire:submit.prevent="store">
+            @csrf
             <h2 class="text-center fw-bold border border-top-0 border-5 blueColorText">CREA IL TUO ARTICOLO:</h2>
             <div class="mb-3 blueColorText">
                 <label  class="form-label fw-semibold">Titolo</label>
@@ -30,12 +31,13 @@
                     <label  class="form-label fw-semibold ">Seleziona una categoria</label>
                     <div class=" border border-info bg-gradient-secondary border rounded">
                     <select wire:model.change='category_id' class="form-select @error('category_id') is-invalid @enderror">
-                    </div>
+                    
                         <option value=""></option>
                         @foreach (App\Models\Categories::all() as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
+                </div>
                     @error('category_id')
                         <span class="text-danger fw-bold">{{$message}}</span>
                     @enderror
