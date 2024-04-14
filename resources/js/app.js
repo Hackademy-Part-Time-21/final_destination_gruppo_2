@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let descriptionElements = document.getElementsByClassName('truncateDescription');
 
     function truncateDescription(description) {
-        if (description.length > 15) {
-            return description.split(' ')[0] + '...';
+        if (description.length > 20) {
+            return description.substring(0, 15) + '...';
         } else {
             return description;
         }
     }
 
     function truncateTitle(title) {
-        if (title.length > 12) {
-            return title.substring(0, 12) + '...';
+        if (title.length > 20) {
+            return title.substring(0, 15) + '...';
         } else {
             return title;
         }
