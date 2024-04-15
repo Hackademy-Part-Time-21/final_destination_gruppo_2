@@ -240,11 +240,8 @@ header {
     }
 }
 
-@media (max-width: 576px) {
-    .form-control {
-        display: none; /* Nasconde l'input di ricerca */
-    }
-}
+
+
 
 .hoverElement:hover {
     color: #e3fef7;  
@@ -314,5 +311,25 @@ header {
     .carousel-container {
         flex: 1;
         max-width: 500px;
+    }
+}
+
+
+.form-login-card {
+    margin: 30px; 
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    
+    width: auto; 
+}
+
+
+@media (max-width: 600px) {
+    .form-login-card {
+        margin: 10px; 
+        padding: 10px; 
+    }
+    .form-login-control, .btn {
+        width: 90%; 
     }
 }
