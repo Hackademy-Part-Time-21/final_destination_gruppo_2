@@ -62,8 +62,7 @@
     font-style: normal;
   }
   
-
-
+  
 
 .btn:hover {
     color: var(--accent)
@@ -103,7 +102,7 @@
     color: var(--primary); 
 }
 
-.mobile-menu-container {
+/* .mobile-menu-container {
     position: relative; 
 }
 
@@ -114,9 +113,9 @@
     left: 0;
     z-index: 1000; 
     background-color: rgb(245, 199, 169); 
-    /* border: 1px solid rgb(64, 20, 48); */
+     border: 1px solid rgb(64, 20, 48); 
     
-}
+} */
 
 .dropdown-menu .dropdown-item:hover {
     background-color: #e3fef7; 
@@ -178,7 +177,7 @@ font-weight: bold ;
 .adsa{
     background-color:rgba(255, 255, 255 , 255)
 }
-
+  
 
 header {
     position: relative;
@@ -258,16 +257,16 @@ header {
     }
 }
 
-@media (max-width: 576px) {
-    .form-control {
-        display: none; /* Nasconde l'input di ricerca */
-    }
-}
+
+
 
 .hoverElement:hover {
     color: #e3fef7;  
   }
 
+  
+
+/* RECENZIONI */
 
   .recensione-container {
     display: flex;

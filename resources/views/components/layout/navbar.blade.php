@@ -1,6 +1,19 @@
 <nav class="fixed-top">
     <div id="mySidenav" class="sidenav">
-        <h5><a href="{{ route('login') }}">Ciao, accedi</a></h5>
+  
+    <div class="user-info" style=" height:50px">
+    @auth
+            <h5><a href="#">{{ auth()->user()->name }}</a></h5>
+            <!-- Qui metti eventuali altre informazioni dell'utente o link di logout -->
+            <a href="#">Carrello</a>
+        @else
+            <h5><a href="{{ route('login') }}">Ciao, accedi</a></h5>
+        @endauth
+        </div>
+
+
+        <!-- MENU SIDENAV -->
+<div class="mt-10" style="border-top:5px solid">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{{route('ads.index')}}">Annunci</a>
         <a class="nav-item dropdown">
@@ -22,7 +35,15 @@
                 <li class="nav-item"><a class="nav-link color-primary" href="{{route('beChecker')}}">Diventa revisore</a></li>
             </ul>
         </li>
-        <li class="nav-item"><a href="{{ route('login') }}">Accedi</a></li>
+        @if(auth()->check())
+    <li>
+        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a>
+        <form action="/logout" method="POST" id="form-logout">
+            @csrf
+        </form>
+    </li>
+@endif
+</div>
     </div>
   
     <div  class="container-fluid background-primary color-accent"  id="main" style="height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px;">
@@ -35,14 +56,19 @@
     
         <!-- BARRA DI RICERCA -->
 
-<div class="pt-2 width: 60px; height: 30px;" style="flex-grow: 1; display: flex; justify-content: center;">
-    <form action="{{ route('ads.index') }}" method="GET" style="display: flex; justify-content: center; width: 100%;" id="searchForm">
-        <input name="searched" class="form-control me-2 col" type="search" placeholder="Search" aria-label="Search" style="width: 60px; height: 30px; padding: 0 10px;">
-        <button type="submit" style="border: none; background: none;">
-            <i type="submit" class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
+        <div class="pt-2" style="display: flex; justify-content: center;">
+    <form action="{{ route('ads.index') }}" method="GET" style="display: flex; align-items: center;">
+        <input id="searchInput" name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 100%; max-width: 200px; padding: 5px;">
+        <button type="submit" style="border: none; background: none;" id="searchIcon">
+        <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass" style="color: #999999;"></i>
+        </div>
         </button>
     </form>
 </div>
+
+
+
 
 <!-- Aggiungi questa sezione prima della chiusura del tag </div> con id="mySidenav" -->
 <!-- <div class="language-selector">
@@ -107,6 +133,17 @@
 
 
 <script>
+    
+$(document).ready(function(){
+    // Quando si clicca sull'icona di ricerca
+    $(".search-icon").click(function(){
+        // Mostra o nascondi la barra di ricerca in base al suo stato attuale
+        $(".form-control").toggle();
+    });
+});
+
+
+
     var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
     var detailColor = getComputedStyle(document.documentElement).getPropertyValue('--detail').trim();  
     
@@ -122,13 +159,17 @@
         document.getElementById("main").style.marginLeft = "0";
     }
 
-    // Event listener per chiudere la sidenav quando si clicca fuori di essa
-    // window.addEventListener('click', function(event) {
-    //     var sidenav = document.getElementById('mySidenav');
-    //     if (event.target != sidenav && !sidenav.contains(event.target)) {
-    //         closeNav();
-    //     }
-    // });
+    // Aggiungi un event listener al documento
+document.addEventListener('click', function(event) {
+    var sidenav = document.getElementById('mySidenav');
+    // Controlla se l'elemento cliccato non è la sidenav stessa
+    if (event.target !== sidenav && !sidenav.contains(event.target)) {
+        // Chiudi la sidenav se è aperta
+        if (sidenav.style.width === "250px") {
+            closeNav();
+        }
+    }
+});
 
 
 
@@ -145,12 +186,12 @@
         });
 
 
-        document.getElementById("searchForm").addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-            e.preventDefault(); // Prevent form submission
-            document.getElementById("searchForm").submit(); // Submit the form
-        }
-    });
+    //     document.getElementById("searchForm").addEventListener("keypress", function(e) {
+    //     if (e.key === "Enter") {
+    //         e.preventDefault(); // Prevent form submission
+    //         document.getElementById("searchForm").submit(); // Submit the form
+    //     }
+    // });
 
     document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.form-control');
