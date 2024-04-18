@@ -62,8 +62,7 @@
     font-style: normal;
   }
   
-
-
+  
 
 .btn:hover {
     color: var(--accent)
@@ -103,7 +102,7 @@
     color: var(--primary); 
 }
 
-.mobile-menu-container {
+/* .mobile-menu-container {
     position: relative; 
 }
 
@@ -114,13 +113,13 @@
     left: 0;
     z-index: 1000; 
     background-color: rgb(245, 199, 169); 
-    border: 1px solid rgb(64, 20, 48);
+     border: 1px solid rgb(64, 20, 48); 
     
-}
+} */
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #401430; 
-    color: #F5C7A9; 
+    background-color: #e3fef7; 
+    
 }
 
 .blueColor {
@@ -178,7 +177,7 @@ font-weight: bold ;
 .adsa{
     background-color:rgba(255, 255, 255 , 255)
 }
-
+  
 
 header {
     position: relative;
@@ -220,7 +219,25 @@ header {
     z-index: 1;
   }
   
+/* Aggiungi questo CSS per stilizzare il selettore di lingua */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Modifica a tuo piacimento */
+}
 
+.flag-wrapper {
+    display: inline-block; /* Permette di allineare gli elementi orizzontalmente */
+}
+
+.flag-icon {
+    width: 30px; /* Modifica a tuo piacimento */
+    height: auto;
+    margin-right: 10px; /* Modifica a tuo piacimento */
+    cursor: pointer;
+}
+
+/* Aggiungi altri stili CSS a tua discrezione */
   
   @media (pointer: coarse) and (hover: none) {
     header {
@@ -247,6 +264,9 @@ header {
     color: #e3fef7;  
   }
 
+  
+
+/* RECENZIONI */
 
   .recensione-container {
     display: flex;
